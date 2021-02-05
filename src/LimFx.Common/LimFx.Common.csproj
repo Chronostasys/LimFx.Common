@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Company>LimFx</Company>
+    <Authors>Alice</Authors>
+    <Description>A simple package contains basic crud functions, bad word replacer, rate limiter(throttling) and basic email service using mongodb</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.2.3</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>email badwords throttling mongodb</PackageTags>
+    <PackageReleaseNotes>-1.1.6 better error handler strategy
+-1.1.5 Add Intergrated article service
+-1.1.2 Add logservice and userservice
+-1.1.1 Fix a bug in email service
+-1.1.0 Fix bugs, enhance dbqueryservice, add new throttling service, add documents, fix some bugs in email service and so on...
+-1.0.5 Fix a bug in badwordfuckerdeep
+-1.0.4 Fix a bug in emailservice, add DBQuerySeviceSlim which doesn't provide text search functions
+-1.0.3 Add xml comments
+-1.0.2 Make email service more efficient
+-1.0.1.5 fix some bugs
+-1.0.1 fix bugs in email service &amp; add functions in DBQueryservice&lt;T&gt; &amp; add ratelimiter middleware &amp; add extension methods &amp; many other else...
+-1.0.0 initial release</PackageReleaseNotes>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://limfx.pro/ProjectHome/9370226b-8b66-46a8-b879-04afbc4547e7</PackageProjectUrl>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.14.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.11.3" />
+    <PackageReference Include="EzPasswordValidator" Version="2.0.0" />
+    <PackageReference Include="Hash" Version="4.0.0" />
+    <PackageReference Include="HtmlSanitizer" Version="5.0.355" />
+    <PackageReference Include="Lucene.Net" Version="4.8.0-beta00008" />
+    <PackageReference Include="Lucene.Net.Analysis.SmartCn" Version="4.8.0-beta00008" />
+    <PackageReference Include="MailKit" Version="2.9.0" />
+    <PackageReference Include="Markdig" Version="0.22.0" />
+    <PackageReference Include="Markdown" Version="2.2.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.4" />
+    <PackageReference Include="NEST" Version="7.9.0" />
+    <PackageReference Include="OpenXmlPowerTools-NetStandard" Version="4.4.21" />
+    <PackageReference Include="Qiniu" Version="7.3.1.1" />
+    <PackageReference Include="RazorLight" Version="2.0.0-rc.2" />
+    <PackageReference Include="SlugGenerator" Version="2.0.2" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+    <PackageReference Include="ToolGood.Words" Version="3.0.2.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+
+</Project>
