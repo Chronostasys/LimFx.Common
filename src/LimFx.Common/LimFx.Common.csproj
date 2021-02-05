@@ -34,7 +34,7 @@
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.11.3" />
     <PackageReference Include="EzPasswordValidator" Version="2.0.0" />
     <PackageReference Include="Hash" Version="4.0.0" />
-    <PackageReference Include="HtmlSanitizer" Version="5.0.355" />
+    <PackageReference Include="HtmlSanitizer" Version="5.0.372" />
     <PackageReference Include="Lucene.Net" Version="4.8.0-beta00008" />
     <PackageReference Include="Lucene.Net.Analysis.SmartCn" Version="4.8.0-beta00008" />
     <PackageReference Include="MailKit" Version="2.9.0" />
