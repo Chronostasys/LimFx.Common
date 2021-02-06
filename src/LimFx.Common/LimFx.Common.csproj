@@ -8,7 +8,7 @@
     <Authors>Alice</Authors>
     <Description>A simple package contains basic crud functions, bad word replacer, rate limiter(throttling) and basic email service using mongodb</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.2.3</Version>
+    <Version>1.2.4</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>email badwords throttling mongodb</PackageTags>
     <PackageReleaseNotes>-1.1.6 better error handler strategy
