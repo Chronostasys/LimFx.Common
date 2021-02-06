@@ -22,18 +22,6 @@ namespace LimFx.Business.Services
             collection = database.GetCollection<T>(collectionName);
             try
             {
-                var t = Activator.CreateInstance<T>();
-                t.Id = counterId;
-                t.ManagedId = 1;
-                t.IsDeleted = true;
-                collection.InsertOneAsync(t);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-            try
-            {
                 collection.Indexes.CreateOneAsync(new CreateIndexModel<T>(Builders<T>.IndexKeys.Ascending(t => t.CreateTime)));
                 collection.Indexes.CreateOneAsync(new CreateIndexModel<T>(Builders<T>.IndexKeys.Ascending(t => t.UpdateTime)));
             }
@@ -50,7 +38,22 @@ namespace LimFx.Business.Services
         }
         public virtual async ValueTask<long> GetNextManagedId(long i=1)
         {
-            return (await collection.FindOneAndUpdateAsync(e => e.Id == counterId, Builders<T>.Update.Inc(e => e.ManagedId, i))).ManagedId;
+            try
+            {
+                return (await collection.FindOneAndUpdateAsync(e => e.Id == counterId, Builders<T>.Update.Inc(e => e.ManagedId, i))).ManagedId;
+            }
+            catch (Exception)
+            {
+                var t = Activator.CreateInstance<T>();
+                t.Id = counterId;
+                t.ManagedId = 1;
+                t.IsDeleted = true;
+                await collection.InsertOneAsync(t);
+                return (await collection
+                    .FindOneAndUpdateAsync(
+                    e => e.Id == counterId, 
+                    Builders<T>.Update.Inc(e => e.ManagedId, i))).ManagedId;
+            }
         }
         public virtual async ValueTask<bool> AnyAsync(FilterDefinition<T> filter)
         {

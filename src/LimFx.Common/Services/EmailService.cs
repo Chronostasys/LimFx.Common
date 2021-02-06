@@ -336,7 +336,7 @@ namespace LimFx.Business.Services
                 {
                     if (++i > 2)
                     {
-                        var t = File.AppendAllTextAsync("smtperr.log", e1.ToString());
+                        var t = File.AppendAllTextAsync("smtperr.log", e1.ToString()+"\n");
                         break;
                     }
                     continue;
